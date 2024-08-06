@@ -1,0 +1,693 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Yi Li</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="145a3c9f-eff1-4f83-bd9c-6ca2906dabb6" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/gradients_3.png" style="object-position:center 60%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="Yi%20Li%20145a3c9feff14f83bd9c6ca2906dabb6/Image_Avatar.jpg"/></div><h1 class="page-title">Yi Li</h1><p class="page-description"></p></header><div class="page-body"><p id="bda39289-388a-4d5d-b751-a12932d24818" class="">MSc in computer technology, Center for Future Media, the School of Computer Science and Engineering, UESTC, Chengdu, China.</p><p id="129e2c8f-088a-4ddc-93be-d920e8e41260" class=""><strong>📧 :  </strong><a href="mailto:elieli0925@qq.com">elieli0925@qq.com</a></p><p id="96d0f13c-c2e9-4e6d-b26b-3008e3012649" class="">📱: 86-13261409152</p><h1 id="8ca88561-d98a-43aa-8b15-39ed40fb7990" class=""><strong>About Me</strong></h1><p id="2918efaf-094c-472f-95ef-5dfb958a0d1b" class="">I‘m Yi Li and I have a strong background in Computer Technology and Digital Media Technology, with work experience as a Senior Game Designer at Tencent and miHoYo, along with various academic projects.</p><p id="687d0c61-c389-411b-8d60-ed2c15765611" class="">My passion lies in Human-Computer Interaction and Virtual Reality, where I aim to create research that enhances people&#x27;s lives by combining technical innovation with user-centric design.</p><p id="cc0e370e-3866-4ebc-b68d-7d207fa22eec" class="">I am a quick learner with strong interdisciplinary skills, a collaborative spirit, and a passion for exploring new technologies.  In my free time, I enjoy sports, traveling, and playing video games.</p><p id="e6262a34-4991-43c1-8807-b65eb74f8ab7" class="">I am actively seeking opportunities to pursue a PhD in related fields.</p><div id="3187ceee-c106-4df3-86fe-ac78627a8e55" class="column-list"><div id="48eaee4c-8631-4409-9c00-605b4dbb6f0b" style="width:43.75%" class="column"><h2 id="4f7c8847-b0a5-4588-a3ef-2bbfda518d93" class="">Interests</h2><ul id="161ee6c1-ad95-43af-8803-aba19259a0dd" class="bulleted-list"><li style="list-style-type:disc">Human-Computer Interaction</li></ul><ul id="6e1ecc25-36a9-4be7-80f8-99fa97e9e833" class="bulleted-list"><li style="list-style-type:disc">Virtual Reality &amp; Extended reality</li></ul><ul id="3a48b4cf-90b8-4dd0-9af0-9a2f6d0e2378" class="bulleted-list"><li style="list-style-type:disc">Perception and Cognition in VR</li></ul><ul id="9eda4506-e185-46c8-ab34-c401fad09da2" class="bulleted-list"><li style="list-style-type:disc">Brain-Computer Interaction</li></ul><p id="6f088442-d5ec-4e59-852d-fbf657431860" class="">
+</p></div><div id="44589c35-d153-459e-860e-da248930ff79" style="width:56.25%" class="column"><h2 id="aad9117e-b5e8-4b00-abc5-65b1931739cb" class="">Education &amp; Work</h2><p id="9939d48e-35c9-4039-a974-bb967797a52f" class="">🎓 MSc in Computer Science and Technology, <div class="indented"><p id="ad928c28-b3ff-4c2b-9d04-706d1852d00d" class="">Sep 2022 - Jul 2025</p><p id="6bb4328a-587c-47d6-aa2d-b755aac83234" class="block-color-gray">University of Electronic Science and Technology of China</p></div></p><p id="4c7dc175-4a3c-4b8d-a0e6-163d347c7c0a" class="">💻 Game Designer, Jul 2017- May 2021<div class="indented"><p id="ef936667-760b-4005-b857-a370f94b111d" class="block-color-gray">IEG, Tencent Co., Ltd., Shenzhen</p><p id="a666285c-9933-4b3b-98af-44cf66b15f45" class="block-color-gray">GenShin Impact, miHoYo Co., Ltd., Shanghai</p></div></p><p id="27941bcb-8f51-4adf-a937-8fa37968e5a5" class="">🎓Engineering Degree, Sep 2013 - Jul 2017<div class="indented"><p id="ebe08d86-6032-4b12-9018-7bc19bd7b4b1" class="block-color-gray">Communication University of China  </p></div></p></div></div><hr id="b4ea646c-1b51-403d-a79f-faa4b89d1c77"/><div id="f2869fdb-dfc0-40ec-a69f-adaee4c26b07" class="column-list"><div id="8ffe4107-3d4b-4220-a34f-96b4783b842b" style="width:41.666666666666664%" class="column"></div><div id="ebce493b-93fb-439e-8de2-d50680345ee2" style="width:25%" class="column"><h1 id="79e280d4-d1db-4ab2-8021-79398be859de" class="">SKILLS</h1></div><div id="67f4574a-e1d2-48c4-a0e9-cb7dc6039208" style="width:33.33333333333333%" class="column"><p id="a61bc638-69f4-45f1-966c-ae87e2d10b5e" class="">
+</p></div></div><div id="b4a75425-74c5-4ffb-8db0-0d600094b7eb" class="column-list"><div id="182985f8-71d0-4d88-a24d-80cd4a7ce892" style="width:100%" class="column"><div id="ecbc6b6d-e8f2-435b-8d37-6d06fb7f11ff" class="column-list"><div id="c0b198f4-b509-4934-a66b-b622e16d3b4c" style="width:4.166666666666666%" class="column"><p id="65944bd0-f032-4cd5-94e6-466715eab80b" class="">
+</p></div><div id="5a5a5b2d-b1c9-49c6-82ed-15502b22df32" style="width:195.83333333333331%" class="column"><figure id="3a231bea-916b-44a1-a82e-6500553f639d" class="image"><a href="Yi%20Li%20145a3c9feff14f83bd9c6ca2906dabb6/Programming.png"><img style="width:60px" src="Yi%20Li%20145a3c9feff14f83bd9c6ca2906dabb6/Programming.png"/></a></figure></div><div id="c41f3812-b6fd-4328-beb2-3aa80ea4e4cf" style="width:4.166666666666666%" class="column"><p id="bcaa75b7-094a-4d23-9419-17df72fc6ae5" class="">
+</p></div></div><h3 id="57603bd8-79a8-47b0-9cea-b076532ff816" class=""><strong>   Programming</strong></h3><p id="dc7345f5-c881-418c-8dc9-c3d6cd398a45" class="">   C/C++, Python, C#, </p><p id="c90022cb-2bb1-4892-86d9-fd02de583a2b" class="">  git, SVN, PlasticSCM</p></div><div id="5f734f3c-9a27-4629-b1d5-2afad7097967" style="width:100%" class="column"><div id="87b76f50-fec7-4e84-9f47-55d63eeb89a5" class="column-list"><div id="0f384840-313f-4f85-aa61-f0eaaea06009" style="width:4.166666666666666%" class="column"><p id="43596633-78df-4082-ae24-160602d2afb2" class="">
+</p></div><div id="5d40a00c-9cbc-4f70-a5e3-3ce9a437a94b" style="width:195.83333333333331%" class="column"><figure id="bda55348-a63a-4144-b6fa-ebaa351a90fa" class="image"><a href="Yi%20Li%20145a3c9feff14f83bd9c6ca2906dabb6/engineering.png"><img style="width:60px" src="Yi%20Li%20145a3c9feff14f83bd9c6ca2906dabb6/engineering.png"/></a></figure></div><div id="c7d9e4c5-bb55-46d8-bd64-974fd585548a" style="width:4.166666666666666%" class="column"><p id="e45b8a8b-e93c-4078-befd-c98d9a058c2b" class="">
+</p></div></div><h3 id="d4143654-fe43-47a0-afee-b314245af45a" class="">     Engineering</h3><p id="d8a8934f-89dd-4793-bd1a-6eea7fe4724c" class="">     Unity, UE5, VR/AR, </p><p id="36f2ea84-76d9-433a-a3dd-14ac0446b559" class="">  Hardware Integration</p></div><div id="4217a1ec-ed53-4cb9-a383-51513b3b6aed" style="width:100%" class="column"><div id="31499b89-a95a-4c43-93c6-4c074cd7ef90" class="column-list"><div id="003d0d5d-dcf4-48ca-a0de-44d631b9b204" style="width:4.166666666666666%" class="column"><p id="3fb7b63f-1b68-4555-a873-be760a9a6292" class="">
+</p></div><div id="7c3cb0b2-923e-411f-852f-83c9e67259d7" style="width:99.99999999999999%" class="column"><figure id="b3921db7-b96a-4d98-a42a-9a4ca6f8f031" class="image"><a href="Yi%20Li%20145a3c9feff14f83bd9c6ca2906dabb6/Research.png"><img style="width:60px" src="Yi%20Li%20145a3c9feff14f83bd9c6ca2906dabb6/Research.png"/></a></figure></div><div id="b312518f-b8dc-4d50-affd-104dca32f3f6" style="width:4.166666666666666%" class="column"><p id="6187f521-c884-4167-91d4-a00ff21af20c" class="">
+</p></div></div><h3 id="bf22b7a1-e5a0-4dae-875d-1ffa8f24704d" class="">          Research</h3><p id="b7ec9725-8952-4316-a6b9-deaebe762571" class="">     LaTeX, SPSS,  ML/DL,</p><p id="3e7f8907-3e11-4b68-99c4-30b70a17f0d3" class="">                Pytorch</p></div></div><hr id="e4930b9d-9621-42eb-a465-4b813728fb08"/><div id="7bcb7d72-e801-4f82-9abd-6a98a5eef4b8" class="column-list"><div id="413bf897-efd8-4c0b-840e-3741d68fb8c1" style="width:29.166666666666664%" class="column"><p id="1f902700-1851-413e-a2f9-3abf37a85a1e" class="">
+</p></div><div id="79364042-29fd-480d-a0f0-ccefe8ab80e5" style="width:58.333333333333336%" class="column"><h1 id="2609f374-84c4-4857-8f6f-ad8de26649a7" class="">       Research</h1></div><div id="519fa7bc-d1d9-4a18-bdc8-dd9a5afa6f46" style="width:12.500000000000014%" class="column"><p id="53652287-eef4-45dd-8684-a264ce803d77" class="">
+</p></div></div><div id="39870559-1378-4d78-82b9-6b5c1698fe96" class="column-list"><div id="ca4a3ae0-411e-4ee3-a4d3-d7d19fe75a5a" style="width:18.75%" class="column"><figure id="c71c1421-7164-490e-80a7-1e786548f753" class="image"><a href="Yi%20Li%20145a3c9feff14f83bd9c6ca2906dabb6/DSA.png"><img style="width:192px" src="Yi%20Li%20145a3c9feff14f83bd9c6ca2906dabb6/DSA.png"/></a></figure></div><div id="7a91dc04-c6e8-4366-9002-e76ae270445a" style="width:81.25%" class="column"><figure id="8dc87aa0-c93a-4fd4-828b-3a4aee85369c" class="link-to-page"><a href="Yi%20Li%20145a3c9feff14f83bd9c6ca2906dabb6/Dynamic%20Scene%20Adjustment%20Mechanism%20for%20Manipulatin%208dc87aa0c93a4fd4828b3a4aee85369c.html">Dynamic Scene Adjustment Mechanism for Manipulating User Experience</a></figure><p id="3528f712-a4f5-45e6-9bd5-db2c4a54d0c7" class="block-color-gray">2024 IEEE Conference Virtual Reality and 3D User Interfaces (VR)</p><p id="5df9042e-3c8e-424b-b5bd-62540aa1eaa5" class=""><strong>Yi Li</strong>,  Zhitao Liu,  Li Yuan, Haolan Tang,  Youteng Fan, Ning Xie</p><p id="2aa86f99-ef0d-4078-af01-4147a68cee60" class="">
+</p></div></div><div id="e00a48de-8854-4d08-ae70-f4b812865933" class="column-list"><div id="1dc7c51f-d53c-43aa-bddf-8942c9e08361" style="width:18.75%" class="column"><figure id="f0ee207d-a01b-4ea5-a7ef-b69be0d26f1e" class="image"><a href="Yi%20Li%20145a3c9feff14f83bd9c6ca2906dabb6/TPandDL.png"><img style="width:124.125px" src="Yi%20Li%20145a3c9feff14f83bd9c6ca2906dabb6/TPandDL.png"/></a></figure></div><div id="a70a76c9-cf6f-4412-92ce-02bfa8acb1ad" style="width:81.25%" class="column"><figure id="78425278-e4cb-4b12-8c77-981c8f646320" class="link-to-page"><a href="Yi%20Li%20145a3c9feff14f83bd9c6ca2906dabb6/Time%20Perception%20in%20VR%20Potential%20Relationship%20with%20%2078425278e4cb4b128c77981c8f646320.html">Time Perception in VR: Potential Relationship with User Experience and Modeling via a Deep Learning Method</a></figure><p id="ce4f38c2-23d7-4c95-8983-700611756169" class="block-color-gray">(Planned) 2025 IEEE Conference Virtual Reality and 3D User Interfaces (VR)</p><p id="b15adc5c-27f9-430a-a429-5602b54ab7fa" class=""><strong>Yi Li</strong>, Xiandi Zhu,  Ning Xie</p><p id="429b4730-7a28-422d-9014-378565d36d11" class="">
+</p></div></div><div id="f8934ded-7f9c-4efd-9717-41a9895ae041" class="column-list"><div id="6763220c-de86-43cb-b787-cfe78f7e2164" style="width:18.75%" class="column"><figure id="ed6756a8-736b-4bde-9ee6-3155a27f612a" class="image"><a href="Yi%20Li%20145a3c9feff14f83bd9c6ca2906dabb6/Moba.png"><img style="width:600px" src="Yi%20Li%20145a3c9feff14f83bd9c6ca2906dabb6/Moba.png"/></a></figure></div><div id="d9bee397-1cb6-4498-b085-128c21a3dc18" style="width:81.25%" class="column"><p id="5cbd8c2b-ea79-4f0f-8a80-d09b7c372ee7" class="">
+</p></div></div><hr id="e1abd685-7787-4f61-8898-252fad1e4af1"/><div id="ac8383aa-eb61-4361-ba53-8c82620271e6" class="column-list"><div id="f3c22b40-b2b3-4692-b55c-544244274585" style="width:29.166666666666664%" class="column"><p id="a2f42eae-3a07-4f1d-b6fc-9315d0386dcc" class="">
+</p></div><div id="1cf04139-5ae3-4541-99fe-600c16ab1c3e" style="width:58.333333333333336%" class="column"><h1 id="75961994-7de9-4f7f-88f7-de7eb345cb00" class="">On-campus Projects</h1></div><div id="33e14929-927c-4054-b892-40e695627876" style="width:12.499999999999991%" class="column"><p id="f2de44bc-b2ae-48f2-843a-e5c9cfa0cda1" class="">
+</p></div></div><p id="80e982a1-2c90-4f62-8713-50f4ec0ceec4" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
